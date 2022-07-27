@@ -21,7 +21,6 @@
 			pstmt.executeUpdate();
 			%>
 			<script>
-			alert("친구 요청 거절 완료");
 			location.href="main.jsp?idx=<%=idx%>";
 			</script>
 			<%

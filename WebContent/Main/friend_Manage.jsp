@@ -170,10 +170,12 @@ function wish_friend(){
 	<select name="target" onchange="fx2()">
 		<option value="0" <%=target==null||target=="친구선택" ? "selected" : "" %>>친구 선택</option>
 		<%
-			for(int i=0;i<list.length;i++){
-				%>
-				<option value="<%=list[i] %>" <%=target.equals(list[i]) ? "selected" : "" %>><%=list[i] %></option>
-				<%
+			if(list!=null){
+				for(int i=0;i<list.length;i++){
+					%>
+					<option value="<%=list[i] %>" <%=target.equals(list[i]) ? "selected" : "" %>><%=list[i] %></option>
+					<%
+				}
 			}
 		%>
 		</select>

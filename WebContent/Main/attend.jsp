@@ -13,7 +13,6 @@
 		session.setAttribute("room_number", room_number);
 		%>
 		<script>
-		alert("이동");
 		location.href="main.jsp?idx=8";
 		</script>
 		<%

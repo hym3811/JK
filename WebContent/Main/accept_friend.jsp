@@ -60,7 +60,6 @@
 					pstmt.executeUpdate();
 					%>
 					<script>
-					alert("친구 추가 완료");
 					location.href="main.jsp?idx=<%=idx%>";
 					</script>
 					<%

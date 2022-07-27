@@ -18,7 +18,7 @@
 			pstmt.executeUpdate();
 			%>
 			<script>
-			location.href="main.jsp?idx=<%=idx%>";
+			location.href="main.jsp?idx=<%=idx%>#speaking";
 			</script>
 			<%
 		}

@@ -9,7 +9,7 @@
 <%-- <%@ include file = "../DBConn.jsp" %> --%>
 <body>
 <h3 id="title">대기실</h3>
-<div class="gameRoom" style="margin-top:20px;width:100%;height:770px;overflow-y:auto;border:1px dashed red;">
+<div class="gameRoom" style="margin-top:20px;width:100%;height:670px;overflow-y:auto;border:1px dashed red;">
 	<table style="border-collapse:collapse;width:100%;">
 		<tr>
 			<%
@@ -81,7 +81,13 @@
 			</tr>
 	</table>
 </div>
+<div style="height:100px;width:100%;">
+	<input type = "button" value = "방만들기" onclick = "createroom()" style="width:100%;height:100%;">
+</div>
 </body>
 <script>
+function createroom(){
+	location.href = "create_room.jsp";
+}
 </script>
 </html>

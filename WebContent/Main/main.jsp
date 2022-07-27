@@ -61,7 +61,7 @@
 			%>
 		</table>
 		</div>
-		<input id="speaking" type="text" name="speaking">
+		<input id="speaking" type="text" id="speaking" name="speaking">
 		<input id="speaking_btn" type="button" value="전송" onclick=add()>
 		</form>
 		<script>
@@ -129,8 +129,8 @@
 		%>
 	</div>
 </div>
-<div class="nav">
-	<input id="btn" style="margin-top:5%!important;" type="button" value="대 기 실" onclick="location.href='main.jsp?idx=1'">
+<div class="nav" <%=idx==8 ? "hidden" : "" %>>
+	<input id="btn" style="margin-top:5%!important;" type="button" value="대 기 실" onclick="<%=idx==8 ? "alert('비활성화')" : "location.href='main.jsp?idx=1'" %>">
 	<input id="btn" type="button" value="계 정 관 리" onclick="location.href='main.jsp?idx=2'">
 	<input id="btn" type="button" value="게 시 판" onclick="location.href='main.jsp?idx=3'">
 	<input id="btn" type="button" value="친 구 관 리" onclick="location.href='main.jsp?idx=4'">

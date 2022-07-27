@@ -36,7 +36,6 @@
 				pstmt.executeUpdate();
 				%>
 				<script>
-				alert("친구 삭제 완료");
 				location.href="main.jsp?idx=<%=idx%>";
 				</script>
 				<%
