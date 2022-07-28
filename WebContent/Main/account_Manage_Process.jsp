@@ -2,35 +2,41 @@
     pageEncoding="UTF-8"%>
 <%@ include file = "../DBConn.jsp"%>
 <%
+	String id = (String)session.getAttribute("id");
+	String name = request.getParameter("name");
+	String birth = request.getParameter("birth");
+	String profile = request.getParameter("profile");
+	String word = request.getParameter("word");
 	String phone = request.getParameter("phone");
-	int idx = (int) session.getAttribute("idx");
 	String password = request.getParameter("password");
 	try{
-		sql="select * from jangki_account where phone=?";
-		pstmt=conn.prepareStatement(sql);
-		pstmt.setString(1, phone);
-		rs=pstmt.executeQuery();
-		if(rs.next()){
-			sql="update jangki_account set password=? where phone=?";
-			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, password);
-			pstmt.setString(2, phone);
+		if(password==""){
+			sql = "update jangki_account set name=?, birth=?, profile=?, word=?, phone=? where id=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setString(2, birth);
+			pstmt.setString(3, profile);
+			pstmt.setString(4, word);
+			pstmt.setString(5, phone);
+			pstmt.setString(6, id);
 			pstmt.executeUpdate();
-			%>
-			<script>
-			alert("계정정보 변경 완료");
-			location.href="main.jsp?idx=<%=idx%>";
-			</script>
-			<%
 		}else{
-			%>
-			<script>
-			alert("잘못된 연락처 정보 입력");
-			history.back();
-			</script>
-			<%
+			sql = "update jangki_account set password=?, name=?, birth=?, profile=?, word=?, phone=? where id=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, password);
+			pstmt.setString(2, name);
+			pstmt.setString(3, birth);
+			pstmt.setString(4, profile);
+			pstmt.setString(5, word);
+			pstmt.setString(6, phone);
+			pstmt.setString(7, id);
+			pstmt.executeUpdate();
 		}
 	}catch(Exception e){
 		e.printStackTrace();
 	}
 %>
+<script>
+alert("정보 변경 완료");
+location.href = "main.jsp?idx=2";
+</script>

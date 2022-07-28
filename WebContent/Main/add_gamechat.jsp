@@ -12,7 +12,7 @@
 		pstmt.executeUpdate();
 		%>
 		<script>
-		location.href="main.jsp?idx=8#gamechat";
+		location.href="main.jsp?#gamechat";
 		</script>
 		<%
 	}catch(Exception e){

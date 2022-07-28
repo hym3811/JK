@@ -10,6 +10,10 @@
 <form name="form2" method="post">
 <%-- <%@ include file = "../DBConn.jsp" %> --%>
 <%
+	int open_profile_2 = 0;
+	if(request.getParameter("open_profile_2")!=null){
+		open_profile_2 = Integer.parseInt(request.getParameter("open_profile_2"));
+	}
 	String room_number = (String)session.getAttribute("room_number");
 	String room_title2 = null;
 	String p1 = null;
@@ -42,12 +46,6 @@
 		if(p2==null){
 			p2="";
 		}
-		System.out.println("room_no: "+room_number);
-		System.out.println("room_title: "+room_title2);
-		System.out.println("P1: "+p1);
-		System.out.println("P2: "+p2);
-		System.out.println("id: "+(String)session.getAttribute("id"));
-		System.out.println("ready: "+ready[0]+" / "+ready[1]);
 		
 		sql = "select win,lose from jangki_record where id=?";
 		pstmt = conn.prepareStatement(sql);
@@ -96,7 +94,7 @@
 		<table border=1 style="width:100%;height:100%;">
 			<tr>
 				<td style="width:30%;text-align:center;">
-					<div id="player" style="background:white;height:100%;">
+					<div id="player" style="background:white;height:100%;" onclick="location.href='main.jsp?friend=<%=p1%>&open_profile_2=1'">
 						<span style="width:20%;font-size:2em;color:blue;font-weight:bold;"><%=p1 %></span>
 						
 						<div style="margin-top:20px;">
@@ -108,13 +106,13 @@
 					</div>
 				</td>
 				<td style="width:20%;background: linear-gradient(0deg, yellow, lightgreen);">
-					<img style="width:100%;" src = "images/Profile/<%=profile[0]%>.png">
+					<img id="player" style="width:100%;" src = "images/Profile/<%=profile[0]%>" onclick="location.href='main.jsp?friend=<%=p1%>&open_profile_2=1'">
 				</td>
 				<td style="width:30%;text-align:center;">
 				<%
 					if(p2!=""){
 						%>
-					<div id="player" style="background:white;height:100%;">
+					<div id="player" style="background:white;height:100%;" onclick="location.href='main.jsp?friend=<%=p2%>&open_profile_2=1'">
 						<span style="width:20%;font-size:2em;color:blue;font-weight:bold;"><%=p2 %></span>
 						<div style="margin-top:20px;">
 							<span>전적 : <%=win[1] %>승 <%=lose[1] %>패</span>
@@ -124,6 +122,12 @@
 						</div>
 					</div>
 						<%
+					}else{
+						%>
+						<div style="width:100%;height:100%;">
+						<p style="font-size:6em;">Χ</p>
+						</div>
+						<%
 					}
 				%>
 				</td>
@@ -131,23 +135,35 @@
 				<%
 					if(p2!=""){
 						%>
-					<img style="width:100%;" src = "images/Profile/<%=profile[1]%>.png">
+					<img id="player" style="width:100%;" src = "images/Profile/<%=profile[1]%>" onclick="location.href='main.jsp?friend=<%=p2%>&open_profile_2=1'">
+						<%
+					}else{
+						%>
+						<div style="width:100%;height:100%;text-align:center;">
+						<p style="font-size:6em;">Χ</p>
+						</div>
 						<%
 					}
 				%>
 				</td>
 			</tr>
 		</table>
+		<div style="left:35%;top:15%;position:absolute;width:200px;height:100px;background-color:white;border:5px dashed black;" <%=open_profile_2==0 ? "hidden" : "" %>>
+			<div  <%if(request.getParameter("friend")!=null){if(request.getParameter("friend").equals(p1)){%>style="font-size:1.5em;font-weight:bold;height:50px;width:100%;line-height:180%;text-align:left;text-indent:20px;color:white;background-color:red;"<%}else{%>style="font-size:1.5em;font-weight:bold;height:50px;width:100%;line-height:180%;text-align:left;text-indent:20px;color:white;background-color:blue;"<%}} %>><%=request.getParameter("friend") %></div>
+			<div style="text-align:center;font-size:1.5em;font-weight:bold;height:50px;width:100%;border:1px solid blue;background-color:lightblue;line-height:200%;">친구추가</div>
+	
+		<div class="close" onclick="location.href='main.jsp?open_profile_2=0'" style="font-size:1.2em;line-height:250%;position:absolute;top:0;right:0;border:1px solid black;width:60px;height:49px;background-color:gray;font-weight:bold;color:white;text-align:center;">닫기</div>
+	</div>
 	</div>
 	<div class="ready">
 	<%
 		if(p1.equals((String)session.getAttribute("id"))&&ready[0]==1&&ready[1]==1){
 			%>
-			<input type = "button" value="<%if(ready[0]==1){%>Ready Done<%}else{%>Ready<%} %>" style="width:50%;height:30px;" onclick="location.href='ready.jsp?p=1&ready1=<%=ready[0] %>'" <%=p1.equals((String)session.getAttribute("id")) ? "" : "disabled" %>><input type = "button" value="Start" style="width:50%;height:30px;" onclick="location.href='../game/Start.jsp'">
+			<input type = "button" value="<%if(ready[0]==1){%>Ready Done<%}else{%>Ready<%} %>" style="width:50%;height:30px;" onclick="location.href='ready.jsp?p=1&ready1=<%=ready[0] %>'" <%=p1.equals((String)session.getAttribute("id")) ? "" : "disabled" %>><input type = "button" value="Start" style="width:50%;height:30px;" onclick="location.href='main.jsp?idx=9'">
 			<%
 		}else{
 			%>
-			<input type = "button" value="Ready" style="width:50%;height:30px;" onclick="location.href='ready.jsp?p=1&ready1=<%=ready[0] %>'" <%=p1.equals((String)session.getAttribute("id")) ? "" : "disabled" %>><input type = "button" value="Ready" style="width:50%;height:30px;" onclick="location.href='ready.jsp?p=2&ready2=<%=ready[1] %>'" <%=p2.equals((String)session.getAttribute("id")) ? "" : "disabled" %>>
+			<input type = "button" value="<%if(ready[0]==1){%>Ready Done<%}else{%>Ready<%} %>" style="width:50%;height:30px;" onclick="location.href='ready.jsp?p=1&ready1=<%=ready[0] %>'" <%=p1.equals((String)session.getAttribute("id")) ? "" : "disabled" %>><input type = "button" value="<%if(ready[1]==1){%>Ready Done<%}else{%>Ready<%} %>" style="width:50%;height:30px;" onclick="location.href='ready.jsp?p=2&ready2=<%=ready[1] %>'" <%=p2.equals((String)session.getAttribute("id")) ? "" : "disabled" %>>
 			<%
 		}
 	%>
@@ -162,9 +178,10 @@
 				String chat_tell = null;
 				String chat_time = null;
 				try{
-					sql = "select * from jangki_gamechat where no=?";
+					sql = "select * from jangki_gamechat where no=? and time>=(select time from jangki_gameroom where no=?)";
 					pstmt = conn.prepareStatement(sql);
 					pstmt.setString(1, room_number);
+					pstmt.setString(2, room_number);
 					rs = pstmt.executeQuery();
 					while(rs.next()){
 						chat_teller = rs.getString(2);
