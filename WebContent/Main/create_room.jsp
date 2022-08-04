@@ -2,26 +2,20 @@
     pageEncoding="UTF-8"%>
 <%@ include file = "../DBConn.jsp" %>
 <%
-	int count = 0;
+	int no = 0;
 	try{
-		sql = "select * from jangki_gameroom order by no";
+		sql = "select max(no) from jangki_replay";
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
-		while(rs.next()){
-			count++;
-			if(count==rs.getInt(1)){
-				continue;
-			}
-			if(count!=rs.getInt(1)){
-				break;
-			}
+		if(rs.next()){
+			no = rs.getInt(1)+1;
 		}
 		sql = "insert into jangki_gameroom values( ?, '어서오세요. 잘부탁드립니다.', ?, '', 0, 0, systimestamp)";
 		pstmt = conn.prepareStatement(sql);
-		pstmt.setInt(1, count);
+		pstmt.setInt(1, no);
 		pstmt.setString(2, (String)session.getAttribute("id"));
 		pstmt.executeUpdate();
-		session.setAttribute("room_number", Integer.toString(count));
+		session.setAttribute("room_number", Integer.toString(no));
 	}catch(Exception e){
 		e.printStackTrace();
 	}

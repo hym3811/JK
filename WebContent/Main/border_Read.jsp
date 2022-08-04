@@ -16,6 +16,7 @@
 		}else if((String)session.getAttribute("border_no")!=null){
 			read_no = (String)session.getAttribute("border_no");
 		}
+		session.setAttribute("history_idx", session.getAttribute("idx"));
 		session.setAttribute("border_no", read_no);
 		String read_category = null;
 		String read_title = null;
@@ -33,9 +34,6 @@
 				read_category = rs.getString(1);
 				read_title = rs.getString(2);
 				replay = rs.getString(3);
-				if(replay==null){
-					replay="리플레이 없음";
-				}
 				read_Writer = rs.getString(4);
 				read_Body = rs.getString(5);
 				write_Date = rs.getString(6).substring(5,10);
@@ -55,11 +53,12 @@
 	%>
 	<h3 id="title">글 읽기</h3>
 	<div class="read_body" style="width:100%;">
-				<input type="button" value="목록" onclick="history.back()" style="margin-left:50px;color:white;background-color:#D86142;border-radius:5px;width:50px;height:25px;">
+				<input id="border_read_btn" type="button" value="목록" onclick="history.back()" style="margin-left:50px;">
 			<%
 				if(read_Writer.equals(id)){
 					%>
-					<input type="button" value="수정" onclick="update_border()" style="margin-left:calc(100% - 200px);color:white;background-color:#D86142;border-radius:5px;width:50px;height:25px;">
+					<input id="border_read_btn" type="button" value="수정" onclick="update_border()" style="margin-left:calc(100% - 250px);">
+					<input id="border_read_btn" type="button" value="삭제" onclick="delete_border()">
 					<%
 				}
 			%>
@@ -74,7 +73,15 @@
 			<th style="border-right:1px dashed black;">작성자</th>
 			<td style="padding-left:1%;"><%=read_Writer %></td>
 			<th style="border-right:1px dashed black;">리플레이</th>
-			<td style="padding-left:1%;"><%=replay %></td>
+			<td style="padding-left:1%;">
+			<%
+				if(replay!=null){
+					%><input id="move_replay" type="button" value="Match No.<%=replay%>" onclick="location.href='../Main/main.jsp?idx=14&match_number=<%=replay%>'"><%
+				}else{
+					%><%=""%><%
+				}
+			%>
+			</td>
 		</tr>
 		<tr style="height:25px;border-bottom:1px dotted black;">
 			<th style="border-right:1px dashed black;">제목</th>
@@ -244,6 +251,9 @@ function add_ripple(){
 }
 function update_border(){
 	location.href="main.jsp?idx=7";
+}
+function delete_border(){
+	location.href="delete_border.jsp";
 }
 </script>
 </html>

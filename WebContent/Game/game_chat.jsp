@@ -38,9 +38,11 @@
 %>
 <body style="width:100%;height:100%;">
 <form name="form2" method="post">
+<input type="text" name="id" value="<%=(String)session.getAttribute("id") %>" hidden>
+<input type="text" name="friend" value="<%=request.getParameter("friend") %>" hidden>
 	<div style="height:50px;width:100%;background-color:lightgray;"><label style="font-weight:bold;">Room </label><label style="font-size:2.2em;font-weight:bold;">No. <%=(String)session.getAttribute("room_number") %></label></div>
 	<div class="chat_profile">
-		<div style="position:absolute;width:50%;height:250px;" onclick="location.href='main.jsp?idx=9&friend=<%=chat_id[0]%>&open_profile_1=1'">
+		<div style="position:absolute;width:50%;height:250px;" onclick="location.href='main.jsp?friend=<%=chat_id[0]%>&open_profile_1=1'">
 			<div style="width:100%;height:200px;background-color:gray;">
 				<img src = "../Main/images/Profile/<%=chat_profile[0] %>">
 			</div>
@@ -48,7 +50,7 @@
 				<h3><%=chat_id[0] %></h3>
 			</div>
 		</div>
-		<div style="position:absolute;width:50%;height:250px;left:50%;" onclick="location.href='main.jsp?idx=9&friend=<%=chat_id[1]%>&open_profile_1=1'">
+		<div style="position:absolute;width:50%;height:250px;left:50%;" onclick="location.href='main.jsp?friend=<%=chat_id[1]%>&open_profile_1=1'">
 			<div style="width:100%;height:200px;background-color:yellow;">
 				<img src = "../Main/images/Profile/<%=chat_profile[1] %>">
 			</div>
@@ -59,9 +61,9 @@
 	</div>
 	<div style="left:30%;top:20%;position:absolute;width:200px;height:100px;background-color:white;border:5px dashed black;" <%=open_profile_1==0 ? "hidden" : "" %>>
 			<div  <%if(request.getParameter("friend")!=null){if(request.getParameter("friend").equals(chat_id[0])){%>style="font-size:1.5em;font-weight:bold;height:50px;width:100%;line-height:180%;text-align:left;text-indent:20px;color:white;background-color:red;"<%}else{%>style="font-size:1.5em;font-weight:bold;height:50px;width:100%;line-height:180%;text-align:left;text-indent:20px;color:white;background-color:blue;"<%}} %>><%=request.getParameter("friend") %></div>
-			<div style="font-size:1.5em;font-weight:bold;height:50px;width:100%;border:1px solid blue;background-color:lightblue;line-height:200%;">친구추가</div>
+			<div id="add_friend_btn" onclick="add_friend_btn()" style="font-size:1.5em;font-weight:bold;height:50px;width:100%;border:1px solid blue;background-color:lightblue;line-height:200%;">친구추가</div>
 	
-	<div class="close" onclick="location.href='main.jsp?idx=9&open_profile_1=0'" style="font-size:1.2em;line-height:250%;position:absolute;top:0;right:0;border:1px solid black;width:60px;height:49px;background-color:gray;font-weight:bold;color:white;">닫기</div>
+	<div class="close" onclick="location.href='main.jsp?open_profile_1=0'" style="font-size:1.2em;line-height:250%;position:absolute;top:0;right:0;border:1px solid black;width:60px;height:49px;background-color:gray;font-weight:bold;color:white;">닫기</div>
 	</div>
 	<div class="surrender" style="height:50px;width:100%;background-color:lightgreen;" onclick="location.href='main.jsp?idx=8'">
 		<h1>항복</h1>
@@ -103,6 +105,13 @@ function add_gamechat(){
 	}else{
 		doc2.action = "../Main/add_gamechat.jsp";
 		doc2.submit();
+	}
+}
+function add_friend_btn(){
+	var doc2 = document.form2;
+	if(doc2.id.value==doc2.friend.value){
+		alert("자기자신");
+		return false;
 	}
 }
 </script>

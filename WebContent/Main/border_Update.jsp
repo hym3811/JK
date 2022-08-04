@@ -34,10 +34,11 @@
 	<table style="margin:0 auto;width:90%;border-collapse:collapse;margin-top:5%;">
 		<tr>
 			<td colspan=2 style="padding-left:5%;">
-				<input style="width:60px;height:25px;border-radius:5px;color:white;background-color:blue;" type="button" value="목록" onclick="history.go(-2)">
+				<input id="border_read_btn"  type="button" value="목록" onclick="history.go(-2)">
 			</td>
 			<td colspan=2 style="text-align:right;padding-right:5%;">
-				<input style="width:60px;height:25px;border-radius:5px;color:white;background-color:blue;" type="button" value="수정완료" onclick="add_border()">
+				<input id="border_read_btn"  type="button" value="삭제" style="width:60px!important;" onclick="delete_border()">
+				<input id="border_read_btn"  type="button" value="수정완료" style="width:60px!important;" onclick="add_border()">
 			</td>
 		</tr>
 		<tr>
@@ -55,6 +56,9 @@
 					<%
 						String category_no2 = null;
 						String category_value2 = null;
+						ArrayList<String> border_update_replay_number = new ArrayList<String>();
+						ArrayList<String> border_update_replay_end = new ArrayList<String>();
+						
 						try{
 							sql = "select * from jangki_border_category";
 							pstmt = conn.prepareStatement(sql);
@@ -66,6 +70,16 @@
 								<option value="<%=category_no2 %>" <%=ctg_val.equals(category_no2) ? "selected" : "" %>><%=category_value2 %></option>
 								<%
 							}
+							
+							sql = "select * from jangki_replay where cho=? or han=? order by end desc";
+							pstmt = conn.prepareStatement(sql);
+							pstmt.setString(1, (String)session.getAttribute("id"));
+							pstmt.setString(2, (String)session.getAttribute("id"));
+							rs = pstmt.executeQuery();
+							while(rs.next()){
+								border_update_replay_number.add(rs.getString(1));
+								border_update_replay_end.add(rs.getString(4).substring(0,19));
+							}
 						}catch(Exception e){
 							e.printStackTrace();
 						}
@@ -76,6 +90,11 @@
 			<td>
 				<select style="border:none;" name="replay">
 					<option value="">리플레이 선택</option>
+					<%
+						for(int i=0;i<border_update_replay_number.size();i++){
+							%><option <%=update_replay.equals(border_update_replay_number.get(i)) ? "selected" : "" %> value="<%=border_update_replay_number.get(i)%>"><%=border_update_replay_number.get(i) %> / <%=border_update_replay_end.get(i) %></option><%
+						}
+					%>
 				</select>
 			</td>
 		</tr>
@@ -106,6 +125,9 @@ function add_border(){
 		doc2.action = "border_Update_Process.jsp";
 		doc2.submit();
 	}
+}
+function delete_border(){
+	location.href="delete_border.jsp";
 }
 </script>
 </html>

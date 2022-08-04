@@ -6,6 +6,7 @@
 	String title = request.getParameter("title");
 	String category = request.getParameter("category");
 	String replay = request.getParameter("replay");
+	System.out.println("replay: "+replay);
 	String body = request.getParameter("body");
 	int no = 1;
 	try{

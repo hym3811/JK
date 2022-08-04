@@ -32,6 +32,11 @@ body,html{
 #player{
 	
 }
+.horse:hover{
+	cursor:pointer;
+	border:5px dashed purple;
+	border-radius:100px;
+}
 #logo{
 	width:25%;
 	position:absolute;
@@ -73,6 +78,17 @@ body,html{
 	cursor:pointer;
 	opacity:0.7;
 }
+#position{
+	width:253px;
+	height:74px;
+	background-size:100%;
+	border-radius:20px;
+	z-index:999;
+}
+#position:hover{
+	cursor:pointer;
+	opacity:0.7;
+}
 .surrender:hover{
 	cursor:pointer;
 	opacity:0.7;
@@ -86,6 +102,22 @@ body,html{
 	padding-top:4%;
 	padding-left:75%;
 	font-size:3em;
+}
+#field{
+	width:11.11%;
+	margin:-2px -2.8px;
+	height:85px;
+}
+#field-{
+	width:11.11%;
+	margin:-2px -2.8px;
+	height:85px;
+	opacity:0.8;
+	border-radius:20px;
+}
+#field-:hover{
+	cursor:pointer;
+	opacity:0.5;
 }
 .content{
 	width:70%;
@@ -151,11 +183,20 @@ body,html{
 	width:100%;
 	height:850px;
 	background-color:white;
+	z-index:10;
+}
+#choice_cancel:hover{
+	cursor:pointer;
+	opacity:0.7;
 }
 .wating,.view{
 	position:relative;
 	width:50%;
 	text-align:left;
+}
+#start_button:hover{
+	cursor:pointer;
+	opacity:0.7;
 }
 #speaking{
 	margin-top:3%;
@@ -305,6 +346,45 @@ body,html{
 #border_btn:hover{
 	cursor:pointer;
 	opacity:0.8;
+}
+#border_read_btn{
+	color:white;background-color:#D86142;border-radius:5px;width:50px;height:25px;
+}
+#border_read_btn:hover{
+	cursor:pointer;
+	color:red;
+	background-color:yellow;
+	font-weight:bold;
+	border:2px solid green;
+	transition:0.3s;
+}
+#move_replay{
+	border:2px solid #353535;
+	background-color:#353535;
+	color:white;
+	font-weight:bold;
+}
+#replay_btn:hover{
+	cursor:pointer;
+	color:red;
+	font-weight:bold;
+	transition:0.3s;
+}
+#replay_action{
+	background-color:orange;
+}
+#replay_action:hover{
+	cursor:pointer;
+	color:red;
+	font-weight:bold;
+	background-color:lightgreen;
+	transition:0.3s;
+}
+#move_replay:hover{
+	border:2px solid red;
+	cursor:pointer;
+	background-color:red;
+	transition:0.3s;
 }
 #btn:hover{
 	color:blue;

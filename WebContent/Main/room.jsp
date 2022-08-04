@@ -15,6 +15,7 @@
 		open_profile_2 = Integer.parseInt(request.getParameter("open_profile_2"));
 	}
 	String room_number = (String)session.getAttribute("room_number");
+	System.out.println((String)session.getAttribute("room_number"));
 	String room_title2 = null;
 	String p1 = null;
 	String p2 = null;
