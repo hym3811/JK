@@ -1,0 +1,267 @@
+drop table jangki_border;
+create table jangki_border(
+	no number(10) primary key,
+	category number(2) not null,
+	title varchar2(300) not null,
+	replay number(10),
+	id varchar2(12) not null,
+	body varchar2(4000) not null,
+	time timestamp not null);
+
+insert into jangki_border values(
+	1, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	2, 2, '222', '', 'test1', 'aaa', systimestamp );
+insert into jangki_border values(
+	3, 3, '333', '', 'test2', 'aaa', systimestamp );
+insert into jangki_border values(
+	4, 4, '444', '', 'test3', 'aaa', systimestamp );
+insert into jangki_border values(
+	5, 5, '555', '', 'test4', 'aaa', systimestamp );
+insert into jangki_border values(
+	6, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	7, 2, '222', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	8, 3, '333', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	9, 4, '444', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	10, 5, '555', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	11, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	12, 2, '222', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	13, 3, '333', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	14, 4, '444', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	15, 5, '555', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	16, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	17, 2, '222', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	18, 3, '333', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	19, 4, '444', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	20, 5, '555', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	21, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	22, 2, '222', '', 'test1', 'aaa', systimestamp );
+insert into jangki_border values(
+	23, 3, '333', '', 'test2', 'aaa', systimestamp );
+insert into jangki_border values(
+	24, 4, '444', '', 'test3', 'aaa', systimestamp );
+insert into jangki_border values(
+	25, 5, '555', '', 'test4', 'aaa', systimestamp );
+
+
+insert into jangki_border values(
+	26, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	27, 2, '222', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	28, 3, '333', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	29, 4, '444', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	30, 5, '555', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	31, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	32, 2, '222', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	33, 3, '333', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	34, 4, '444', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	35, 5, '555', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	36, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	37, 2, '222', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	38, 3, '333', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	39, 4, '444', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	40, 5, '555', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	41, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	42, 2, '222', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	43, 3, '333', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	44, 4, '444', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	45, 5, '555', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	46, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	47, 2, '222', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	48, 3, '333', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	49, 4, '444', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	50, 5, '555', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	51, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	52, 2, '222', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	53, 3, '333', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	54, 4, '444', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	55, 5, '555', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	56, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	57, 2, '222', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	58, 3, '333', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	59, 4, '444', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	60, 5, '555', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	61, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	62, 2, '222', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	63, 3, '333', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	64, 4, '444', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	65, 5, '555', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	66, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	67, 2, '222', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	68, 3, '333', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	69, 4, '444', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	70, 5, '555', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	71, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	72, 2, '222', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	73, 3, '333', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	74, 4, '444', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	75, 5, '555', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	76, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	77, 2, '222', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	78, 3, '333', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	79, 4, '444', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	80, 5, '555', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	81, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	82, 2, '222', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	83, 3, '333', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	84, 4, '444', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	85, 5, '555', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	86, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	87, 2, '222', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	88, 3, '333', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	89, 4, '444', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	90, 5, '555', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	91, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	92, 2, '222', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	93, 3, '333', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	94, 4, '444', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	95, 5, '555', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	96, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	97, 2, '222', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	98, 3, '333', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	99, 4, '444', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	100, 5, '555', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	101, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	102, 2, '222', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	103, 3, '333', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	104, 4, '444', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	105, 5, '555', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	106, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	107, 2, '222', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	108, 3, '333', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	109, 4, '444', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	110, 5, '555', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	111, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	112, 2, '222', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	113, 3, '333', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	114, 4, '444', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	115, 5, '555', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	116, 1, '111', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	117, 2, '222', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	118, 3, '333', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	119, 4, '444', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	120, 5, '555', '', 'manager', 'aaa', systimestamp );
+insert into jangki_border values(
+	121, 5, '555', '', 'manager', 'aaa', systimestamp );
+
+drop table jangki_border_category;
+create table jangki_border_category(
+	no number(2) primary key,
+	category_value varchar2(30) not null);
+
+insert into jangki_border_category values( 1, '잡담' );
+insert into jangki_border_category values( 2, '질문' );
+insert into jangki_border_category values( 3, '공략' );
+insert into jangki_border_category values( 4, '연구' );
+insert into jangki_border_category values( 5, '토론' );
+
+commit;

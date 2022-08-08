@@ -1,0 +1,8 @@
+drop table jangki_replay;
+create table jangki_replay(
+	no number(10) primary key,
+	cho varchar2(12),
+	han varchar2(12),
+	end timestamp);
+
+commit;

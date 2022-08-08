@@ -1,0 +1,19 @@
+drop table jangki_ripple;
+create table jangki_ripple(
+	border_no number(10),
+	ripple_no number(10),
+	ripple_id varchar2(12),
+	ripple varchar2(4000),
+	step number(3),
+	time timestamp,
+	primary key(border_no,ripple_no));
+
+insert into jangki_ripple values( 1, 1, 'manager', '1', 0, systimestamp );
+insert into jangki_ripple values( 1, 2, 'hanarose', '1-1', 1, systimestamp );
+insert into jangki_ripple values( 1, 3, 'hanarose', '1-1-1', 2, systimestamp );
+insert into jangki_ripple values( 1, 4, 'hanarose', '1-2', 1, systimestamp );
+insert into jangki_ripple values( 1, 5, 'hanarose', '1-3', 1, systimestamp );
+
+commit;
+
+select min(ripple_no) from jangki_ripple where border_no=1 and ripple_no>1 and step<=0;

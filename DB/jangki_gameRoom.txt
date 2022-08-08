@@ -1,0 +1,36 @@
+drop table jangki_gameroom;
+create table jangki_gameroom(
+	no number(10) primary key,
+	title varchar2(300),
+	p1 varchar2(12),
+	p2 varchar2(12),
+	ready1 number(1),
+	ready2 number(2),
+	time timestamp);
+
+insert into jangki_gameroom values( 1, '어서오세요. 잘부탁드립니다.(1)', 'manager', '', 1, 1, systimestamp );
+insert into jangki_gameroom values( 2, '어서오세요. 잘부탁드립니다.(2)', 'hanarose', '', 1, 0, systimestamp );
+insert into jangki_gameroom values( 3, '어서오세요. 잘부탁드립니다.(3)', 'test2', '', 1, 0, systimestamp );
+insert into jangki_gameroom values( 4, '어서오세요. 잘부탁드립니다.(4)', 'test3', 'test4', 0, 0, systimestamp );
+insert into jangki_gameroom values( 5, '어서오세요. 잘부탁드립니다.(5)', 'test5', 'test6', 0, 0, systimestamp );
+insert into jangki_gameroom values( 6, '어서오세요. 잘부탁드립니다.(6)', 'test5', 'test6', 0, 0, systimestamp );
+insert into jangki_gameroom values( 13, '어서오세요. 잘부탁드립니다.(7)', 'test5', 'test6', 0, 0, systimestamp );
+insert into jangki_gameroom values( 15, '어서오세요. 잘부탁드립니다.(8)', 'test5', 'test6', 0, 0, systimestamp );
+insert into jangki_gameroom values( 17, '어서오세요. 잘부탁드립니다.(9)', 'test5', 'test6', 0, 0, systimestamp );
+insert into jangki_gameroom values( 18, '어서오세요. 잘부탁드립니다.(10)', 'test5', 'test6', 0, 0, systimestamp );
+insert into jangki_gameroom values( 19, '어서오세요. 잘부탁드립니다.(11)', 'test5', 'test6', 0, 0, systimestamp );
+insert into jangki_gameroom values( 20, '어서오세요. 잘부탁드립니다.(12)', 'test5', 'test6', 0, 0, systimestamp );
+
+drop table jangki_gamechat;
+create table jangki_gamechat(
+	no number(10),
+	teller varchar2(12),
+	tell varchar2(300),
+	time timestamp);
+
+insert into jangki_gamechat values( 1, 'manager', '안녕하세요', systimestamp );
+insert into jangki_gamechat values( 1, 'test1', '안녕하세요', systimestamp );
+insert into jangki_gamechat values( 2, 'manager', '네네 반갑습니다.', systimestamp );
+insert into jangki_gamechat values( 3, 'manager', '네네 반갑습니다.', systimestamp );
+
+commit;

@@ -1,0 +1,103 @@
+drop table jangki_account;
+create table jangki_account(
+	id varchar2(12) primary key,
+	password varchar2(12) not null,
+	name varchar2(12) not null,
+	birth date,
+	profile varchar2(100),
+	word varchar2(300),
+	phone varchar2(11) unique);
+
+insert into jangki_account values(
+	'manager', '1234', '관리자', '19910509', 'Cranks.png', '잘부탁드립니다.', '01030055580');
+insert into jangki_account values(
+	'hanarose', '1234', '이혜림', '19901213', '3DDD.png', '잘부탁드립니다.', '01026414031');
+insert into jangki_account values(
+	'test1', '1234', 'test1', '19000101', '3DDD-1.png', '잘부탁드립니다.', '01012345670');
+insert into jangki_account values(
+	'test2', '1234', 'test2', '19000101', 'Afterclap.png', '잘부탁드립니다.', '01012345671');
+insert into jangki_account values(
+	'test3', '1234', 'test3', '19000101', '01.png', '잘부탁드립니다.', '01012345672');
+insert into jangki_account values(
+	'test4', '1234', 'test4', '19000101', 'Delivery boy-4.png', '잘부탁드립니다.', '01012345673');
+insert into jangki_account values(
+	'test5', '1234', 'test5', '19000101', 'Delivery boy-5.png', '잘부탁드립니다.', '01012345674');
+insert into jangki_account values(
+	'test6', '1234', 'test6', '19000101', 'Funny Bunny-7.png', '잘부탁드립니다.', '01012345675');
+insert into jangki_account values(
+	'test7', '1234', 'test7', '19000101', 'Guacamole.png', '잘부탁드립니다.', '01012345676');
+insert into jangki_account values(
+	'test8', '1234', 'test8', '19000101', 'Guacamole-1.png', '잘부탁드립니다.', '01012345677');
+insert into jangki_account values(
+	'test9', '1234', 'test9', '19000101', 'Upstream-1.png', '잘부탁드립니다.', '01012345678');
+insert into jangki_account values(
+	'test10', '1234', 'test10', '19000101', 'Upstream-15.png', '잘부탁드립니다.', '01012345679');
+
+drop table jangki_record;
+create table jangki_record(
+	id varchar2(12) primary key,
+	win number(10),
+	lose number(10));
+
+insert into jangki_record values('manager', 11, 2);
+insert into jangki_record values('hanarose', 3, 4);
+insert into jangki_record values('test1', 0, 0);
+insert into jangki_record values('test2', 0, 0);
+insert into jangki_record values('test3', 0, 0);
+insert into jangki_record values('test4', 0, 0);
+insert into jangki_record values('test5', 0, 0);
+insert into jangki_record values('test6', 0, 0);
+insert into jangki_record values('test7', 0, 0);
+insert into jangki_record values('test8', 0, 0);
+insert into jangki_record values('test9', 0, 0);
+insert into jangki_record values('test10', 0, 0);
+
+drop table jangki_friend;
+create table jangki_friend(
+	id varchar2(12) primary key,
+	list varchar2(4000),
+	wish varchar2(4000));
+
+insert into jangki_friend values(
+	'manager', 'hanarose test1 test2 ', 'test3 test4 test5 test6 test7 test8 test9 test10 ');
+insert into jangki_friend values(
+	'hanarose', 'manager test1 test2 ', 'test3 test4 test5 ');
+insert into jangki_friend values(
+	'test1', 'manager ', '');
+insert into jangki_friend values(
+	'test2', 'manager ', '');
+insert into jangki_friend values(
+	'test3', '', '');
+insert into jangki_friend values(
+	'test4', '', '');
+insert into jangki_friend values(
+	'test5', '', '');
+insert into jangki_friend values(
+	'test6', '', '');
+insert into jangki_friend values(
+	'test7', '', '');
+insert into jangki_friend values(
+	'test8', '', '');
+insert into jangki_friend values(
+	'test9', '', '');
+insert into jangki_friend values(
+	'test10', '', '');
+
+drop table jangki_wispher;
+create table jangki_wispher(
+	id varchar2(12) not null,
+	target varchar2(12) not null,
+	teller varchar2(12) not null,
+	wispher varchar2(1000),
+	time timestamp);
+
+insert into jangki_wispher values(
+	'manager', 'hanarose','hanarose', '어서오세요. 반가워요', systimestamp);
+insert into jangki_wispher values(
+	'manager', 'hanarose','manager', '네네 안녕하십니까~', systimestamp);
+insert into jangki_wispher values(
+	'hanarose', 'manager','hanarose', '어서오세요. 반가워요', systimestamp);
+insert into jangki_wispher values(
+	'hanarose', 'manager','manager', '네네 안녕하십니까~', systimestamp);
+
+commit;

@@ -1,0 +1,45 @@
+drop table jangki_profile;
+create table jangki_profile(
+	no number(5) primary key,
+	name varchar2(100) unique);
+
+insert into jangki_profile values( 1 , '01.png' );
+insert into jangki_profile values( 2 , '3DDD.png' );
+insert into jangki_profile values( 3 , '3DDD-1.png' );
+insert into jangki_profile values( 4 , '3DDD-2.png' );
+insert into jangki_profile values( 5 , '3DDD-3.png' );
+insert into jangki_profile values( 6 , '3DDD-4.png' );
+insert into jangki_profile values( 7 , 'Afterclap.png' );
+insert into jangki_profile values( 8 , 'Afterclap-1.png' );
+insert into jangki_profile values( 9 , 'Afterclap-2.png' );
+insert into jangki_profile values( 10 , 'Afterclap-3.png' );
+insert into jangki_profile values( 11 , 'Afterclap-4.png' );
+insert into jangki_profile values( 12 , 'Afterclap-5.png' );
+insert into jangki_profile values( 13 , 'Afterclap-6.png' );
+insert into jangki_profile values( 14 , 'Afterclap-7.png' );
+insert into jangki_profile values( 15 , 'Afterclap-8.png' );
+insert into jangki_profile values( 16 , 'Afterclap-9.png' );
+insert into jangki_profile values( 17 , 'Cranks.png' );
+insert into jangki_profile values( 18 , 'Cranks-1.png' );
+insert into jangki_profile values( 19 , 'Cranks-2.png' );
+insert into jangki_profile values( 20 , 'Delivery boy.png' );
+insert into jangki_profile values( 21 , 'Delivery boy-1.png' );
+insert into jangki_profile values( 22 , 'Delivery boy-2.png' );
+insert into jangki_profile values( 23 , 'Delivery boy-3.png' );
+insert into jangki_profile values( 24 , 'Delivery boy-4.png' );
+insert into jangki_profile values( 25 , 'Delivery boy-5.png' );
+insert into jangki_profile values( 26 , 'E-commerce.png' );
+insert into jangki_profile values( 27 , 'E-commerce-1.png' );
+insert into jangki_profile values( 28 , 'E-commerce-2.png' );
+insert into jangki_profile values( 29 , 'Funny Bunny.png' );
+insert into jangki_profile values( 30 , 'Funny Bunny-1.png' );
+insert into jangki_profile values( 31 , 'Funny Bunny-2.png' );
+insert into jangki_profile values( 32 , 'Funny Bunny-3.png' );
+insert into jangki_profile values( 33 , 'Funny Bunny-4.png' );
+insert into jangki_profile values( 34 , 'Funny Bunny-5.png' );
+insert into jangki_profile values( 35 , 'Funny Bunny-6.png' );
+insert into jangki_profile values( 36 , 'Funny Bunny-7.png' );
+insert into jangki_profile values( 37 , 'Funny Bunny-8.png' );
+
+commit;
+

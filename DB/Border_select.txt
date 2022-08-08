@@ -1,0 +1,1 @@
+select a.no,b.category_value,title,id,time from jangki_border a join jangki_border_category b on a.category=b.no where a.no<=121 and a.no>111 order by a.no desc

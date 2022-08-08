@@ -1,0 +1,15 @@
+drop table jangki_wating;
+create table jangki_wating(
+	no number(20) primary key,
+	id varchar2(20) not null,
+	speaking varchar2(4000) not null);
+
+insert into jangki_wating values(1, 'manager', '안녕하세요.');
+insert into jangki_wating values(2, 'hanaros', '반갑습니다.');
+insert into jangki_wating values(3, 'manager', '한 게임 하실 분 있나요?.');
+insert into jangki_wating values(4, 'hanaros', '저랑 하시죠. ㅎㅎ');
+insert into jangki_wating values(5, 'manager', 'ㄱㄱㄱㄱ 방 팔게요.');
+
+
+
+commit;

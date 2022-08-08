@@ -1,0 +1,109 @@
+drop table jangki_field;
+create table jangki_field(
+	no number(3) unique,
+	y number(2),
+	x number(2),
+	img varchar2(100),
+	primary key(y,x));
+
+insert into jangki_field values( 1, 10, 1, '좌상.png');
+insert into jangki_field values( 2, 10, 2, '상가로.png');
+insert into jangki_field values( 3, 10, 3, '상가로.png');
+insert into jangki_field values( 4, 10, 4, '한궁좌상.png');
+insert into jangki_field values( 5, 10, 5, '한궁상.png');
+insert into jangki_field values( 6, 10, 6, '한궁우상.png');
+insert into jangki_field values( 7, 10, 7, '상가로.png');
+insert into jangki_field values( 8, 10, 8, '상가로.png');
+insert into jangki_field values( 9, 10, 9, '우상.png');
+
+insert into jangki_field values( 10, 9, 1, '좌세로.png');
+insert into jangki_field values( 11, 9, 2, '교차.png');
+insert into jangki_field values( 12, 9, 3, '교차.png');
+insert into jangki_field values( 13, 9, 4, '교차.png');
+insert into jangki_field values( 14, 9, 5, '궁성.png');
+insert into jangki_field values( 15, 9, 6, '교차.png');
+insert into jangki_field values( 16, 9, 7, '교차.png');
+insert into jangki_field values( 17, 9, 8, '교차.png');
+insert into jangki_field values( 18, 9, 9, '우세로.png');
+
+insert into jangki_field values( 19, 8, 1, '좌세로.png');
+insert into jangki_field values( 20, 8, 2, '교차.png');
+insert into jangki_field values( 21, 8, 3, '교차.png');
+insert into jangki_field values( 22, 8, 4, '한궁좌하.png');
+insert into jangki_field values( 23, 8, 5, '교차.png');
+insert into jangki_field values( 24, 8, 6, '한궁우하.png');
+insert into jangki_field values( 25, 8, 7, '교차.png');
+insert into jangki_field values( 26, 8, 8, '교차.png');
+insert into jangki_field values( 27, 8, 9, '우세로.png');
+
+insert into jangki_field values( 28, 7, 1, '좌세로.png');
+insert into jangki_field values( 29, 7, 2, '교차.png');
+insert into jangki_field values( 30, 7, 3, '교차.png');
+insert into jangki_field values( 31, 7, 4, '교차.png');
+insert into jangki_field values( 32, 7, 5, '교차.png');
+insert into jangki_field values( 33, 7, 6, '교차.png');
+insert into jangki_field values( 34, 7, 7, '교차.png');
+insert into jangki_field values( 35, 7, 8, '교차.png');
+insert into jangki_field values( 36, 7, 9, '우세로.png');
+
+insert into jangki_field values( 37, 6, 1, '좌세로.png');
+insert into jangki_field values( 38, 6, 2, '교차.png');
+insert into jangki_field values( 39, 6, 3, '교차.png');
+insert into jangki_field values( 40, 6, 4, '교차.png');
+insert into jangki_field values( 41, 6, 5, '교차.png');
+insert into jangki_field values( 42, 6, 6, '교차.png');
+insert into jangki_field values( 43, 6, 7, '교차.png');
+insert into jangki_field values( 44, 6, 8, '교차.png');
+insert into jangki_field values( 45, 6, 9, '우세로.png');
+
+insert into jangki_field values( 46, 5, 1, '좌세로.png');
+insert into jangki_field values( 47, 5, 2, '교차.png');
+insert into jangki_field values( 48, 5, 3, '교차.png');
+insert into jangki_field values( 49, 5, 4, '교차.png');
+insert into jangki_field values( 50, 5, 5, '교차.png');
+insert into jangki_field values( 51, 5, 6, '교차.png');
+insert into jangki_field values( 52, 5, 7, '교차.png');
+insert into jangki_field values( 53, 5, 8, '교차.png');
+insert into jangki_field values( 54, 5, 9, '우세로.png');
+
+insert into jangki_field values( 55, 4, 1, '좌세로.png');
+insert into jangki_field values( 56, 4, 2, '교차.png');
+insert into jangki_field values( 57, 4, 3, '교차.png');
+insert into jangki_field values( 58, 4, 4, '교차.png');
+insert into jangki_field values( 59, 4, 5, '교차.png');
+insert into jangki_field values( 60, 4, 6, '교차.png');
+insert into jangki_field values( 61, 4, 7, '교차.png');
+insert into jangki_field values( 62, 4, 8, '교차.png');
+insert into jangki_field values( 63, 4, 9, '우세로.png');
+
+insert into jangki_field values( 82, 3, 1, '좌세로.png');
+insert into jangki_field values( 83, 3, 2, '교차.png');
+insert into jangki_field values( 84, 3, 3, '교차.png');
+insert into jangki_field values( 85, 3, 4, '초궁좌상.png');
+insert into jangki_field values( 86, 3, 5, '교차.png');
+insert into jangki_field values( 87, 3, 6, '초궁우상.png');
+insert into jangki_field values( 88, 3, 7, '교차.png');
+insert into jangki_field values( 89, 3, 8, '교차.png');
+insert into jangki_field values( 90, 3, 9, '우세로.png');
+
+insert into jangki_field values( 91, 2, 1, '좌세로.png');
+insert into jangki_field values( 92, 2, 2, '교차.png');
+insert into jangki_field values( 93, 2, 3, '교차.png');
+insert into jangki_field values( 94, 2, 4, '교차.png');
+insert into jangki_field values( 95, 2, 5, '궁성.png');
+insert into jangki_field values( 96, 2, 6, '교차.png');
+insert into jangki_field values( 97, 2, 7, '교차.png');
+insert into jangki_field values( 98, 2, 8, '교차.png');
+insert into jangki_field values( 99, 2, 9, '우세로.png');
+
+insert into jangki_field values( 100, 1, 1, '좌하.png');
+insert into jangki_field values( 101, 1, 2, '하가로.png');
+insert into jangki_field values( 102, 1, 3, '하가로.png');
+insert into jangki_field values( 103, 1, 4, '초궁좌하.png');
+insert into jangki_field values( 104, 1, 5, '초궁하.png');
+insert into jangki_field values( 105, 1, 6, '초궁우하.png');
+insert into jangki_field values( 106, 1, 7, '하가로.png');
+insert into jangki_field values( 107, 1, 8, '하가로.png');
+insert into jangki_field values( 108, 1, 9, '우하.png');
+
+commit;

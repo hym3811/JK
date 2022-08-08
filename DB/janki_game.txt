@@ -1,0 +1,32 @@
+drop table jangki_game_info;
+create table jangki_game_info(
+	no number(10) primary key,
+	cho varchar2(12) not null,
+	han varchar2(12) not null,
+	cho_position number(1),
+	han_position number(1),
+	turn number(1),
+	time timestamp);
+
+delete from jangki_game_info where no=1;
+delete from jangki_game_info where no=21;
+delete from jangki_game_info where no=22;
+delete from jangki_game_info where no=23;
+delete from jangki_game_info where no=24;
+delete from jangki_game_info where no=25;
+
+drop table jangki_start_1;
+drop table jangki_start_21;
+drop table jangki_start_22;
+drop table jangki_start_23;
+drop table jangki_start_24;
+drop table jangki_start_25;
+
+drop table jangki_game_1;
+drop table jangki_game_21;
+drop table jangki_game_22;
+drop table jangki_game_23;
+drop table jangki_game_24;
+drop table jangki_game_25;
+
+commit;
