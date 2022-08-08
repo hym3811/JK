@@ -1017,7 +1017,6 @@
 				}
 				if((cho_p.contains((code_x+1)+","+(code_y))==false)&&(han_p.contains((code_x+1)+","+(code_y))==false)){
 					if((han_p.contains((code_x+2)+","+(code_y-1))==false)){
-						System.out.println("체크");
 						possible.add((code_x+2)+","+(code_y-1));
 					}
 					if((han_p.contains((code_x+2)+","+(code_y+1))==false)){
@@ -1413,7 +1412,7 @@
 			for(int j=0;j<16;j++){
 				%>
 				<img 
-					id="<%=i%><%=j%>" src="../Game/Horse/<%=horse_png[i][j] %>"
+					id="<%=i%><%=j%>" src="../Game/Horse/<%=horse_png[i][j] %>" alt="<%=horse_png[i][j] %>"
 					<%
 						if(horse_x[i][j]!=0&&horse_y[i][j]!=0){
 							if(camp!=null&&pick!=null){

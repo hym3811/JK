@@ -83,6 +83,8 @@
 						}catch(Exception e){
 							e.printStackTrace();
 						}
+						System.out.println(border_update_replay_number);
+						System.out.println(border_update_replay_end);
 					%>
 				</select>
 			</td>
@@ -92,7 +94,7 @@
 					<option value="">리플레이 선택</option>
 					<%
 						for(int i=0;i<border_update_replay_number.size();i++){
-							%><option <%=update_replay.equals(border_update_replay_number.get(i)) ? "selected" : "" %> value="<%=border_update_replay_number.get(i)%>"><%=border_update_replay_number.get(i) %> / <%=border_update_replay_end.get(i) %></option><%
+							%><option <%=update_replay==null ? "" : (update_replay.equals(border_update_replay_number.get(i)) ? "selected" : "") %> value="<%=border_update_replay_number.get(i)%>"><%=border_update_replay_number.get(i) %> / <%=border_update_replay_end.get(i) %></option><%
 						}
 					%>
 				</select>

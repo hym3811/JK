@@ -4,7 +4,7 @@
 <%
 	int no = 0;
 	try{
-		sql = "select max(no) from jangki_replay";
+		sql = "select max(no) from jangki_gameroom";
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
 		if(rs.next()){

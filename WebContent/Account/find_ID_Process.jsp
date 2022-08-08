@@ -6,7 +6,7 @@
 	String birth = request.getParameter("birth");
 	String phone = request.getParameter("phone");
 	try{
-		sql = "select name,birth,id from janki_account where phone=?";
+		sql = "select name,birth,id from jangki_account where phone=?";
 		pstmt=conn.prepareStatement(sql);
 		pstmt.setString(1, phone);
 		rs=pstmt.executeQuery();

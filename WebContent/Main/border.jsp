@@ -163,7 +163,7 @@
 				</td>
 				<td style="width:12%;border-bottom:2px solid black!important;">
 					<select name="category" style="width:100%;height:25px;">
-						<option value="0">전체</option>
+						<option value="0">분류 전체</option>
 						<%
 							String category_no = null;
 							String category_value = null;
@@ -186,7 +186,7 @@
 				</td>
 				<td style="width:12%;border-bottom:2px solid black!important;">
 					<select name="filter" style="width:100%;height:25px;">
-						<option value="0">전체</option>
+						<option value="0">검색 전체</option>
 						<option value="title" <%=filter==null ? "" : (filter.equals("title") ? "selected" : "") %>>제목</option>
 						<option value="id" <%=filter==null ? "" : (filter.equals("id") ? "selected" : "") %>>작성자</option>
 					</select>

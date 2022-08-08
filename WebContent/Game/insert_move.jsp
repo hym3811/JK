@@ -18,15 +18,6 @@
 		rs = pstmt.executeQuery();
 		if(rs.next()){
 			int no = rs.getInt(1)+1;
-
-			sql = "insert into jangki_game_"+(String)session.getAttribute("room_number")+" values( ? , ? , ? , ? , ? )";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, no);
-			pstmt.setString(2, team);
-			pstmt.setString(3, horse);
-			pstmt.setString(4, x);
-			pstmt.setString(5, y);
-			pstmt.executeUpdate();
 			
 			switch(turn){
 			case 1:
@@ -43,6 +34,15 @@
 					pstmt.setInt(3, kill);
 					pstmt.setInt(4, 0);
 					pstmt.setInt(5, 0);
+					pstmt.executeUpdate();
+
+					sql = "insert into jangki_game_"+(String)session.getAttribute("room_number")+" values( ? , ? , ? , ? , ? )";
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setInt(1, no);
+					pstmt.setString(2, team);
+					pstmt.setString(3, horse);
+					pstmt.setString(4, x);
+					pstmt.setString(5, y);
 					pstmt.executeUpdate();
 					
 					if(kill==0){
@@ -87,6 +87,17 @@
 						</script>
 						<%
 					}
+				}else{
+
+					sql = "insert into jangki_game_"+(String)session.getAttribute("room_number")+" values( ? , ? , ? , ? , ? )";
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setInt(1, no);
+					pstmt.setString(2, team);
+					pstmt.setString(3, horse);
+					pstmt.setString(4, x);
+					pstmt.setString(5, y);
+					pstmt.executeUpdate();
+					
 				}
 				
 				break;
@@ -104,6 +115,15 @@
 					pstmt.setInt(3, kill);
 					pstmt.setInt(4, 0);
 					pstmt.setInt(5, 0);
+					pstmt.executeUpdate();
+
+					sql = "insert into jangki_game_"+(String)session.getAttribute("room_number")+" values( ? , ? , ? , ? , ? )";
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setInt(1, no);
+					pstmt.setString(2, team);
+					pstmt.setString(3, horse);
+					pstmt.setString(4, x);
+					pstmt.setString(5, y);
 					pstmt.executeUpdate();
 					
 					if(kill==0){
@@ -145,6 +165,17 @@
 						</script>
 						<%
 					}
+				}else{
+
+					sql = "insert into jangki_game_"+(String)session.getAttribute("room_number")+" values( ? , ? , ? , ? , ? )";
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setInt(1, no);
+					pstmt.setString(2, team);
+					pstmt.setString(3, horse);
+					pstmt.setString(4, x);
+					pstmt.setString(5, y);
+					pstmt.executeUpdate();
+					
 				}
 				
 				break;
